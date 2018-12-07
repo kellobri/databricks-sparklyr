@@ -56,7 +56,7 @@ model_iris <- tidy_iris %>%
 test_iris <- tbl(sc, "spark_iris_test")
 
 # Generate and collect predictions
-pred_iris <- sdf_predict(model_iris, test_iris) %>%
+pred_iris <- sdf_predict(test_iris, model_iris) %>%
   collect
 
 # Plot the predictions in R, label all incorrect
